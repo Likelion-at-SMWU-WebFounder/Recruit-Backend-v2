@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/webfounder
+      SPRING_DATASOURCE_USERNAME: webfounder_user
+      SPRING_DATASOURCE_PASSWORD: webfounder1234
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: "true"
+    networks:
+      - recruit-backend-network
+
+  db:
+    image: mysql:8.0
+    container_name: mysql-container
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: webfounder
+      MYSQL_USER: webfounder_user
+      MYSQL_PASSWORD: webfounder1234
+    networks:
+      - recruit-backend-network
+
+networks:
+  recruit-backend-network:
+    driver: bridge
