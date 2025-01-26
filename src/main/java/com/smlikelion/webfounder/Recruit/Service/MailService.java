@@ -79,11 +79,11 @@ public class MailService {
         SimpleMailMessage message=new SimpleMailMessage();
 
         try{
-            message.setSubject("[멋쟁이사자처럼 숙명여대] 12기 지원서류 접수가 정상적으로 처리되었습니다."); // 메일 제목
+            message.setSubject("[멋쟁이사자처럼 숙명여대] 13기 지원서류 접수가 정상적으로 처리되었습니다."); // 메일 제목
             message.setTo(receiver);
             message.setText("안녕하세요,\n" +
                     "\n" +
-                    "저희 멋쟁이사자처럼 숙명여대 12기 지원해 주신 여러분께 이 메일을 보냅니다. \n" +
+                    "저희 멋쟁이사자처럼 숙명여대 13기 지원해 주신 여러분께 이 메일을 보냅니다. \n" +
                     "\n" +
                     "먼저, 지원에 참여해 주셔서 진심으로 감사드립니다. 여러분의 열정과 관심에 깊이 감사드립니다.\n" +
                     "\n" +
