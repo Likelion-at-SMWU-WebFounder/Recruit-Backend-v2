@@ -47,3 +47,9 @@ logging:
 secret:
   jwt: aBcDeFgHiJkLmNoPqRsTuVwXyZ0123456789AbCdEfGhIjKlMnOpQrStUvWxYz
 
+google:
+  docs:
+    credentials: classpath:credentials.json
+    application-name: Recruitment System
+    scope: https://www.googleapis.com/auth/documents
+    document-id: 1aMe9deXsLgNkfW4I1HpMED676sDi23h9dUkC2iZYYtk

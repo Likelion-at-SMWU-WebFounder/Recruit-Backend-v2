@@ -1,20 +1,19 @@
 package com.smlikelion.webfounder.Recruit.Service;
-import com.smlikelion.webfounder.Recruit.Dto.Request.MailRequestDto;
+
 import com.smlikelion.webfounder.Recruit.Dto.Request.RecruitmentRequest;
-import com.smlikelion.webfounder.Recruit.Dto.Response.MailResponseDto;
 import com.smlikelion.webfounder.Recruit.Dto.Response.RecruitmentResponse;
 import com.smlikelion.webfounder.Recruit.Dto.Response.StudentInfoResponse;
 import com.smlikelion.webfounder.Recruit.Entity.*;
 import com.smlikelion.webfounder.Recruit.Repository.JoinerRepository;
-import com.smlikelion.webfounder.Recruit.Repository.MailRepository;
 import com.smlikelion.webfounder.Recruit.exception.DuplicateStudentIdException;
-import com.smlikelion.webfounder.Recruit.exception.NotFoundEmailException;
 import com.smlikelion.webfounder.manage.entity.Candidate;
 import com.smlikelion.webfounder.manage.repository.CandidateRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import com.google.api.services.docs.v1.Docs;
+
+import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -27,6 +26,7 @@ public class RecruitService {
     private final JoinerRepository joinerRepository;
     private final CandidateRepository candidateRepository;
     private final MailService mailService;
+    private final GoogleDocsService googleDocsService;
 
     public RecruitmentResponse registerRecruitment(RecruitmentRequest request) {
 
@@ -61,5 +61,25 @@ public class RecruitService {
                 .answerList(joiner.toAnswerListResponse())
                 .interviewTime(interviewTime)
                 .build();
+    }
+
+    public String uploadToGoogleDocs(String documentId, RecruitmentRequest request) {
+        if (request == null) {
+            throw new IllegalArgumentException("RecruitmentRequest cannot be null");
+        }
+        if (request.getStudentInfo() == null || request.getAnswerListRequest() == null) {
+            throw new IllegalArgumentException("Required fields in RecruitmentRequest cannot be null");
+        }
+
+        try {
+            Docs docsService = googleDocsService.getDocsService();
+            String content = "Student Info: " + request.getStudentInfo().getStudentId() + "\n"
+                    + "Answers: " + request.getAnswerListRequest().toAnswerList().toString();
+
+            googleDocsService.appendTextToDocument(documentId, content);
+            return documentId;
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to upload to Google Docs", e);
+        }
     }
 }

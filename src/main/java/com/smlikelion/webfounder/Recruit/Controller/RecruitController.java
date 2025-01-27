@@ -1,8 +1,6 @@
-package com.smlikelion.webfounder.Recruit.Controller;// Import statements
+package com.smlikelion.webfounder.Recruit.Controller;
 
-import com.smlikelion.webfounder.Recruit.Dto.Request.MailRequestDto;
 import com.smlikelion.webfounder.Recruit.Dto.Request.RecruitmentRequest;
-import com.smlikelion.webfounder.Recruit.Dto.Response.MailResponseDto;
 import com.smlikelion.webfounder.Recruit.Dto.Response.RecruitmentResponse;
 import com.smlikelion.webfounder.Recruit.Entity.Joiner;
 import com.smlikelion.webfounder.Recruit.Repository.JoinerRepository;
@@ -33,7 +31,7 @@ public class RecruitController {
     private JoinerRepository joinerRepository;
 
 
-    @Operation(summary = "트랙별 서류 작성하기")
+    @Operation(summary = "트랙별 서류 작성하기 및 Google Docs 자동 업로드")
     @PostMapping("/docs")
     public BaseResponse<RecruitmentResponse> submitRecruitment(
             @RequestParam("track") String track,
@@ -44,16 +42,25 @@ public class RecruitController {
 
         if ("fe".equalsIgnoreCase(track) || "pm".equalsIgnoreCase(track) || "be".equalsIgnoreCase(track)) {
             try {
-                // Process the valid request
+                // 서류 등록
                 RecruitmentResponse recruitResponse = recruitService.registerRecruitment(request);
+
+                // Google Docs 업로드
+                String documentId = "1aMe9deXsLgNkfW4I1HpMED676sDi23h9dUkC2iZYYtk"; // Google Docs 문서 ID 설정
+                recruitService.uploadToGoogleDocs(documentId, request);
+                log.info("Google Docs에 서류가 정상적으로 업로드됨: {}", documentId);
+
                 return new BaseResponse<>(recruitResponse);
             } catch (DuplicateStudentIdException e) {
                 return new BaseResponse<>(ErrorCode.NOT_FOUND.getCode(), ErrorCode.DUPLICATE_STUDENT_ID_ERROR.getMessage(), null);
+            } catch (Exception e) {
+                log.error("Google Docs 업로드 중 오류 발생", e);
+                return new BaseResponse<>(ErrorCode.INTERNAL_SERVER_ERROR.getCode(), "Google Docs update failed", null);
             }
         } else {
-            // Handle invalid track value
+            // 유효하지 않은 트랙 값 처리
             String errorMessage = "Invalid track value. Please provide a valid track (fe, pm, be).";
-            return new BaseResponse<>(ErrorCode.NOT_FOUND.getCode(), ErrorCode.NOT_FOUND.getMessage(), null);
+            return new BaseResponse<>(ErrorCode.NOT_FOUND.getCode(), errorMessage, null);
         }
     }
 
@@ -88,4 +95,20 @@ public class RecruitController {
         }
     }
 
+    @Operation(summary = "트랙별 서류를 Google Docs에 추가")
+    @PostMapping("/docs/upload")
+    public BaseResponse<String> uploadToExistingGoogleDoc(
+            @RequestParam("documentId") String documentId,
+            @RequestBody @Valid RecruitmentRequest request,
+            BindingResult bindingResult) {
+
+        logValidationErrors(bindingResult);
+
+        try {
+            String docId = recruitService.uploadToGoogleDocs(documentId, request);
+            return new BaseResponse<>("Content added to document successfully with ID: " + docId);
+        } catch (Exception e) {
+            return new BaseResponse<>(ErrorCode.INTERNAL_SERVER_ERROR.getCode(), "Google Docs update failed", null);
+        }
+    }
 }

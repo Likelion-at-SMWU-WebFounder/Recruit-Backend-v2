@@ -1,6 +1,5 @@
 package com.smlikelion.webfounder.Recruit.Dto.Response;
 
-import com.smlikelion.webfounder.Recruit.Entity.Programmers;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
