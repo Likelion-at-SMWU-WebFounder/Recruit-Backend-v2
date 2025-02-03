@@ -44,13 +44,13 @@ public class RecruitService {
         joiner.setAnswerList(answerList);
 
         joiner = joinerRepository.save(joiner);
-        if(joiner != null) {
+        if (joiner != null) {
             mailService.sendApplyStatusMail(joiner.getEmail());
         }
         StudentInfoResponse studentInfoResponse = joiner.toStudentInfoResponse();
 
         // cadidate entity 생성 시 서류합 란을 reject로 초기 설정
-        Candidate candidate=new Candidate(joiner,"REJECT","REJECT");
+        Candidate candidate = new Candidate(joiner, "REJECT", "REJECT");
         candidateRepository.save(candidate);
 
         Set<String> interviewTime = request.getInterview_time().values().stream().collect(Collectors.toSet());
@@ -64,22 +64,15 @@ public class RecruitService {
     }
 
     public String uploadToGoogleDocs(String documentId, RecruitmentRequest request) {
-        if (request == null) {
-            throw new IllegalArgumentException("RecruitmentRequest cannot be null");
-        }
-        if (request.getStudentInfo() == null || request.getAnswerListRequest() == null) {
-            throw new IllegalArgumentException("Required fields in RecruitmentRequest cannot be null");
+        if (request == null || request.getStudentInfo() == null || request.getAnswerListRequest() == null) {
+            throw new IllegalArgumentException("필수 요청 데이터가 누락되었습니다.");
         }
 
         try {
-            Docs docsService = googleDocsService.getDocsService();
-            String content = "Student Info: " + request.getStudentInfo().getStudentId() + "\n"
-                    + "Answers: " + request.getAnswerListRequest().toAnswerList().toString();
-
-            googleDocsService.appendTextToDocument(documentId, content);
+            googleDocsService.uploadRecruitmentToGoogleDocs(documentId, request);
             return documentId;
         } catch (IOException e) {
-            throw new RuntimeException("Failed to upload to Google Docs", e);
+            throw new RuntimeException("Google Docs 업로드 실패", e);
         }
     }
 }

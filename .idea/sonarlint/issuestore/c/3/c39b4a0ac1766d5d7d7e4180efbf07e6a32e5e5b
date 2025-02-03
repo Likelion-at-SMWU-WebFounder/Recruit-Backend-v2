@@ -1,9 +1,7 @@
 
-ˆ	java:S112R"FDefine and throw a dedicated exception instead of using a generic one.(ñö…¹8ÙŸ¡µÊ2J$d6ab1c2c-914e-48d4-bd2f-159be9d9bd1a
-š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(í¿•ıÿÿÿÿJ$869d4d4d-4c31-4429-b08a-19a1976045b5
+b	java:S112K"FDefine and throw a dedicated exception instead of using a generic one.(×„ø8º£ŞÌ2
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(í¿•ıÿÿÿÿ8ÍòŞÌ2J$8fb64827-44e3-4c09-8baa-1af15fbcdc3e
 z
-java:S2589/"7Remove this expression which always evaluates to "true"(Îªåö8¦êú´Ê2J$abe9700f-c491-4c6f-aeee-c3196c1ad344
-
-java:S1854K"?Remove this useless assignment to local variable "docsService".(îöæ~8ä ¡µÊ2J$7b8a4788-0065-4242-a56c-4edb66c41db5
-r
-java:S1481K"0Remove this unused "docsService" local variable.(îöæ~8ë ¡µÊ2J$7b93a18f-7d2b-4e39-a93c-02da3695069f
+java:S2589/"7Remove this expression which always evaluates to "true"(Îªåö8ÍóŞÌ2J$cbe4a9a6-a4c5-40c8-9c62-139386713f38
+c
+java:S1128"ARemove this unused import 'com.google.api.services.docs.v1.Docs'.(Î±Áùÿÿÿÿ8Óº£ŞÌ2

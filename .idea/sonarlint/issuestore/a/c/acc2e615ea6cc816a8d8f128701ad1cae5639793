@@ -1,4 +1,10 @@
 
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(í¿•ıÿÿÿÿ8œÒÖ´Ê2J$5f5212d6-9cbe-469b-8b45-5db01d2e7e60
-X
-java:S1874"6Remove this use of "JacksonFactory"; it is deprecated.(¬üáÛüÿÿÿÿ8«­û´Ê2
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(í¿•ıÿÿÿÿ8İ§âÌ2
+R
+java:S1874""6Remove this use of "JacksonFactory"; it is deprecated.(×³‰g8ñİ§âÌ2
+g
+java:S1128"ERemove this unused import 'com.google.api.client.http.HttpTransport'.(ÓŠãûúÿÿÿÿ8•Ş§âÌ2
+`
+java:S1128"CRemove this unused import 'com.google.api.client.json.JsonFactory'.(•èí¬8–Ş§âÌ2
+_
+java:S1128"=Remove this unused import 'com.google.api.client.util.Lists'.(‡Ã–èûÿÿÿÿ8–Ş§âÌ2

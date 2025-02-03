@@ -33,3 +33,7 @@ w
 Gsrc/test/java/com/smlikelion/webfounder/WebfounderApplicationTests.java,7/6/76d1ba4cce665034d74a51bdca851424656afb0a
 ƒ
 Ssrc/main/java/com/smlikelion/webfounder/Recruit/Dto/Request/StudentInfoRequest.java,5/1/5176b43df924a5d458dc035002841461081c0248
+
+Osrc/main/java/com/smlikelion/webfounder/manage/controller/ManageController.java,2/4/244d7c0d14f0ca9cb94232c5691abb1b7e0701e0
+q
+Asrc/main/java/com/smlikelion/webfounder/Recruit/Entity/Track.java,c/d/cdfb026c525fc992a34640c803caebb1c0523ac2
