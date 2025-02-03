@@ -16,9 +16,9 @@ spring:
 
   datasource:
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://localhost:3306/webfounder
-          username: webfounder_root
-          password: webfounder1234
+          url: {$DB_URL}
+          username: {$DB_USERNAME}
+          password: {$DB_PASSWORD}
 
   mail:
     host: smtp.gmail.com
@@ -43,13 +43,12 @@ logging:
   level:
     org.hibernate.SQL: debug
 
-    
 secret:
-  jwt: aBcDeFgHiJkLmNoPqRsTuVwXyZ0123456789AbCdEfGhIjKlMnOpQrStUvWxYz
+  jwt: {$JWT_SECRET}
 
 google:
   docs:
     credentials: classpath:credentials.json
     application-name: Recruitment System
     scope: https://www.googleapis.com/auth/documents
-    document-id: 1aMe9deXsLgNkfW4I1HpMED676sDi23h9dUkC2iZYYtk
+    document-id: {$GOOGLE_DOCS_DOCUMENT_ID}

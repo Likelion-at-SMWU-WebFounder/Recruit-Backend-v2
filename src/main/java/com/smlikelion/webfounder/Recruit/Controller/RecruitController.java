@@ -12,6 +12,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
@@ -30,6 +31,9 @@ public class RecruitController {
     @Autowired
     private JoinerRepository joinerRepository;
 
+    @Value("${GOOGLE_DOCS_DOCUMENT_ID}")
+    private String documentId;
+
 
     @Operation(summary = "트랙별 서류 작성하기 및 Google Docs 자동 업로드")
     @PostMapping("/docs")
@@ -46,7 +50,6 @@ public class RecruitController {
                 RecruitmentResponse recruitResponse = recruitService.registerRecruitment(request);
 
                 // Google Docs 업로드
-                String documentId = "1aMe9deXsLgNkfW4I1HpMED676sDi23h9dUkC2iZYYtk"; // Google Docs 문서 ID 설정
                 recruitService.uploadToGoogleDocs(documentId, request);
                 log.info("Google Docs에 서류가 정상적으로 업로드됨: {}", documentId);
 
