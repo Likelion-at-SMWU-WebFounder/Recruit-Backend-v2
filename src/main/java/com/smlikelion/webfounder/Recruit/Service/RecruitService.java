@@ -11,7 +11,6 @@ import com.smlikelion.webfounder.manage.repository.CandidateRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import com.google.api.services.docs.v1.Docs;
 
 import java.io.IOException;
 import java.util.List;
