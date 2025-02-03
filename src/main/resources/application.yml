@@ -16,9 +16,9 @@ spring:
 
   datasource:
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: {$DB_URL}
-          username: {$DB_USERNAME}
-          password: {$DB_PASSWORD}
+          url: ${DB_URL}
+          username: ${DB_USERNAME}
+          password: ${DB_PASSWORD}
 
   mail:
     host: smtp.gmail.com
@@ -44,11 +44,11 @@ logging:
     org.hibernate.SQL: debug
 
 secret:
-  jwt: {$JWT_SECRET}
+  jwt: ${JWT_SECRET}
 
 google:
   docs:
     credentials: classpath:credentials.json
     application-name: Recruitment System
     scope: https://www.googleapis.com/auth/documents
-    document-id: {$GOOGLE_DOCS_DOCUMENT_ID}
+    document-id: ${GOOGLE_DOCS_DOCUMENT_ID}
