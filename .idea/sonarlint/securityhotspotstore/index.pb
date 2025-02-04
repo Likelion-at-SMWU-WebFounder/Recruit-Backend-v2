@@ -37,3 +37,5 @@ Ssrc/main/java/com/smlikelion/webfounder/Recruit/Dto/Request/StudentInfoRequest.
 Osrc/main/java/com/smlikelion/webfounder/manage/controller/ManageController.java,2/4/244d7c0d14f0ca9cb94232c5691abb1b7e0701e0
 q
 Asrc/main/java/com/smlikelion/webfounder/Recruit/Entity/Track.java,c/d/cdfb026c525fc992a34640c803caebb1c0523ac2
+…
+Usrc/main/java/com/smlikelion/webfounder/Recruit/Dto/Response/StudentInfoResponse.java,8/a/8ac3c13f1c701e93b0dfacdfcc903d2fbbfc07dd

@@ -31,7 +31,7 @@ public class RecruitController {
     @Autowired
     private JoinerRepository joinerRepository;
 
-    @Value("${GOOGLE_DOCS_DOCUMENT_ID}")
+    @Value("${GOOGLE_DOCS_DOCUMENT_IDS}")
     private String documentId;
 
 

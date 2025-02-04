@@ -1,8 +1,8 @@
 
-”	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(´êû<J$50a9c775-1bf3-4fc7-b5c1-7bba6ae4343f
+”	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(´êû<J$1f6f7cd7-156c-4ed0-8aef-0deddae82f52
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8¥«˜Ê2J$7285a299-2a28-4536-b561-fe61412bbb2c
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8¥«˜Ê2J$78b7aca1-6dd6-4853-8df7-ba84e2c14f74
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8‘¥«˜Ê2J$4fac6ca6-34e4-4774-8f7d-d22990a99750
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8‘¥«˜Ê2J$05aa19a4-ba41-4b21-8d35-6088c1a7eca9
 g
-java:S3751^"Make this method non "private".(Åþ½žÿÿÿÿÿ8Â¥«˜Ê2J$d8781277-ffc3-42f5-acde-fecb0f89d763
+java:S3751^"Make this method non "private".(Åþ½žÿÿÿÿÿ8Â¥«˜Ê2J$8d21ff2b-c9ab-4e77-99c6-2eee7bd9c1d5

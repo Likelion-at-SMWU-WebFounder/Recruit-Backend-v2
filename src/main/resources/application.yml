@@ -51,4 +51,5 @@ google:
     credentials: classpath:credentials.json
     application-name: Recruitment System
     scope: https://www.googleapis.com/auth/documents
-    document-id: ${GOOGLE_DOCS_DOCUMENT_ID}
+    document-ids: ${GOOGLE_DOCS_DOCUMENT_IDS}
+    max-length-per-doc: 5000  # ✅ 문서 하나에 저장할 최대 문자 수
