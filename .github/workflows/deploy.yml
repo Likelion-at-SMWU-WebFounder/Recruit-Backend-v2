@@ -1,0 +1,50 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Log in to Amazon ECR
+      run: |
+        aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 183270034453.dkr.ecr.ap-northeast-2.amazonaws.com
+
+    - name: Build Docker image
+      run: |
+        docker build -t smwu-webfounders:latest .
+        docker tag smwu-webfounders:latest 183270034453.dkr.ecr.ap-northeast-2.amazonaws.com/smwu-webfounders:latest
+
+    - name: Push Docker image to ECR
+      run: |
+        docker push 183270034453.dkr.ecr.ap-northeast-2.amazonaws.com/smwu-webfounders:latest
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+    - name: SSH into EC2 and deploy the app
+      uses: appleboy/ssh-action@v0.1.8
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        key: ${{ secrets.EC2_PRIVATE_KEY }}
+        script: |
+          echo "Stopping old container"
+          docker stop smwu-webfounders || true
+          docker rm smwu-webfounders || true
+          echo "Pulling the latest Docker image"
+          docker pull 183270034453.dkr.ecr.ap-northeast-2.amazonaws.com/smwu-webfounders:latest
+          echo "Running new container"
+          docker run -d --name smwu-webfounders -p 8080:8080 183270034453.dkr.ecr.ap-northeast-2.amazonaws.com/smwu-webfounders:latest
