@@ -50,3 +50,6 @@ Dsrc/main/java/com/smlikelion/webfounder/global/config/WebConfig.java,7/a/7ab00
 Osrc/main/java/com/smlikelion/webfounder/global/config/SpringSecurityConfig.java,e/8/e8df091d3084f435e3ec371fe85ad38e755efafa
 ‚
 Rsrc/main/java/com/smlikelion/webfounder/Recruit/Dto/Request/AnswerListRequest.java,7/4/74310ffa0c66be794bb515cadcb8493c20e0e4c5
+:
+
+.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
