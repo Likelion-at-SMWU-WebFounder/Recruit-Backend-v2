@@ -23,8 +23,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: ${mail.username}
-    password: ${mail.password}
+    username: sookmyung@likelion.org
+    password: hpgkklwzuirytnyg
     properties:
       mail:
         smtp:
@@ -51,5 +51,4 @@ google:
     credentials: classpath:credentials.json
     application-name: Recruitment System
     scope: https://www.googleapis.com/auth/documents
-    document-ids: ${GOOGLE_DOCS_DOCUMENT_IDS}
-    max-length-per-doc: 5000  # ✅ 문서 하나에 저장할 최대 문자 수
+    document-id: ${GOOGLE_DOCS_DOCUMENT_ID}

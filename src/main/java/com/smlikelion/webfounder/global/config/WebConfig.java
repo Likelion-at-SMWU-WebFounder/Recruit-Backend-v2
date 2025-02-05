@@ -28,7 +28,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:3000", "http://54.180.201.99", "http://13.209.61.108:8080",
+                .allowedOrigins("http://localhost:3000", "http://54.180.201.99", "http://13.209.61.108:8080", "http://54.180.86.155",
                         "http://sooklion-bucket.s3-website.ap-northeast-2.amazonaws.com","https://smwu-likelion.com",
                         "http://smadminlion.store", "http://smwu-likelion.com.s3-website.ap-northeast-2.amazonaws.com",
                         "http://smwu-likelion.com")  // 허용할 클라이언트 도메인
