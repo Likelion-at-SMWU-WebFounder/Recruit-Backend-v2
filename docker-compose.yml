@@ -23,6 +23,10 @@ services:
       SPRING_MAIL_PASSWORD: hpgkklwzuirytnyg
       SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH: "true"
       SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE: "true"
+
+      # Google Docs API 환경변수 추가
+      GOOGLE_DOCS_DOCUMENT_ID: 1fovWBfWAWTdzvt3ixZlQunW0WSsLrrvTuJcDJ3Znaas
+
     networks:
       - recruit-backend-network
 
