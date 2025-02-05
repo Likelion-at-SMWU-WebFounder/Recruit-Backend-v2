@@ -3,7 +3,9 @@ import lombok.Getter;
 import lombok.Setter;
 import javax.validation.constraints.NotBlank;
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 @Getter
 @Setter
@@ -30,6 +32,16 @@ public class AnswerListRequest {
         return Arrays.asList(A1, A2, A3, A4, A5, A6, A7);
     }
 
-
-
+    // ✅ 추가: Map<String, String> 형태로 변환
+    public Map<String, String> toAnswerListMap() {
+        Map<String, String> answerMap = new LinkedHashMap<>();
+        answerMap.put("문항 1", A1);
+        answerMap.put("문항 2", A2);
+        answerMap.put("문항 3", A3);
+        answerMap.put("문항 4", A4);
+        answerMap.put("문항 5", A5);
+        answerMap.put("문항 6", A6);
+        answerMap.put("문항 7", A7);
+        return answerMap;
+    }
 }

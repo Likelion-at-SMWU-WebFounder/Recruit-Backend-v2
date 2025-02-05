@@ -1,0 +1,9 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(µ×ÔÆþÿÿÿÿ
+g
+java:S1128"QRemove this unused import 'com.smlikelion.webfounder.Recruit.Entity.Programmers'.(é™ÏÎ
+\
+java:S1128	"ARemove this unused import 'javax.validation.constraints.NotNull'.(áç¥ãüÿÿÿÿ
+E
+java:S1128
+"*Remove this unused import 'java.util.Set'.(ö²„¤þÿÿÿÿ

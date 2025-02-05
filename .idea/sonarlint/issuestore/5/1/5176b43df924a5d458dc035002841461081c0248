@@ -1,0 +1,4 @@
+
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‰ÑøÿÿÿÿJ$8503ec3e-fe1a-4838-9cf6-4214b28b9bea
+	java:S116%"TRename this field "Portfolio" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶‡âµJ$09511d77-0f17-4633-818b-14104f9fe071
+f	java:S106R"+Replace this use of System.out by a logger.(»ö»¨J$c6208d00-e2f4-481e-a264-4845c93fd220
