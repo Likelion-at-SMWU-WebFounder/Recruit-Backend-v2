@@ -28,12 +28,12 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:3000",
-                        "http://54.180.86.155:8080", // 2기
-                        "http://smwu-likelion-deploy.s3-website.ap-northeast-2.amazonaws.com", // 2기
+                .allowedOrigins("http://localhost:3000", "http://54.180.86.155:8080",
+                        "http://smwu-likelion-deploy.s3-website.ap-northeast-2.amazonaws.com",
+                        "https://smwulion.com/", // 2기
                         "http://sooklion-bucket.s3-website.ap-northeast-2.amazonaws.com","https://smwu-likelion.com",
-                        "http://smadminlion.store", "http://smwu-likelion.com.s3-website.ap-northeast-2.amazonaws.com",
-                        "http://smwu-likelion.com")  // 허용할 클라이언트 도메인
+                        "http://smadminlion.store", "http://smwu-likelion.com.s3-website.ap-northeast-2.amazonaws.com"
+                )  // 허용할 클라이언트 도메인
                 .allowedMethods("*") // "GET", "POST", "PUT", "DELETE" 외에도 "OPTIONS", "HEAD" 등이 있음
                 .allowedHeaders("*")
                 .exposedHeaders("Authorization", "Content-Type")
