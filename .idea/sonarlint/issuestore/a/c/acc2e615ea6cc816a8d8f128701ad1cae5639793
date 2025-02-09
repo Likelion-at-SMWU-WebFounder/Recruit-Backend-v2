@@ -1,0 +1,7 @@
+
+ˆ	java:S112Y"FDefine and throw a dedicated exception instead of using a generic one.(Ôàı8Ÿ‹’Í2J$d34da9af-f805-47a2-85a4-abdddd7b7516
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(í¿•ıÿÿÿÿ8İ§âÌ2J$29a2d976-42ce-412d-9f70-d2d3e7c37402
+y
+java:S1874$"6Remove this use of "JacksonFactory"; it is deprecated.(«·¢ß8Šë Í2J$5aa0d931-e8b9-4912-a43a-b13648af9593
+I
+java:S1602C",Remove useless curly braces around statement(À‚“8±¼¦¢Í2
