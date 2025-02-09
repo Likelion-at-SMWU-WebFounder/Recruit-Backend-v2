@@ -30,7 +30,8 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addMapping("/**")
                 .allowedOrigins("http://localhost:3000", "http://54.180.86.155:8080",
                         "http://smwu-likelion-deploy.s3-website.ap-northeast-2.amazonaws.com",
-                        "https://smwulion.com/", "https://admin-smwulion.netlify.app",// 2기
+                        "https://smwulion.com/", "https://admin-smwulion.netlify.app",
+                        "https://d3vjgf9am7gpdo.cloudfront.net",// 2기
                         "http://sooklion-bucket.s3-website.ap-northeast-2.amazonaws.com","https://smwu-likelion.com",
                         "http://smadminlion.store", "http://smwu-likelion.com.s3-website.ap-northeast-2.amazonaws.com"
                 )  // 허용할 클라이언트 도메인
