@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.javanet.NetHttpTransport;
@@ -46,26 +47,26 @@ public class GoogleDocsService {
      */
     public void uploadRecruitmentToGoogleDocs(String documentId, RecruitmentRequest request) throws IOException {
         int docLength = getDocumentEndIndex();
-
         log.info("Google Docs에 서류 업로드 중: 문서 ID={}, 현재 길이={}", documentId, docLength);
 
-        // ✅ 문서에 데이터 추가
         List<Request> requests = new ArrayList<>();
-        requests.add(insertText("지원자 정보", true));
-        requests.add(insertText("이름: " + request.getStudentInfo().getName(), false));
-        requests.add(insertText("학번: " + request.getStudentInfo().getStudentId(), false));
-        requests.add(insertText("전공: " + request.getStudentInfo().getMajor(), false));
-        requests.add(insertText("이메일: " + request.getStudentInfo().getEmail(), false));
-        requests.add(insertText("전화번호: " + request.getStudentInfo().getPhoneNumber(), false));
-        requests.add(insertText("트랙: " + request.getStudentInfo().getTrack(), false));
-        requests.add(insertText("포트폴리오: " + request.getStudentInfo().getPortfolio(), false));
-        requests.add(insertText("졸업 예정 연도: " + request.getStudentInfo().getGraduatedYear(), false));
-        requests.add(insertText("프로그래머스 인증: " + request.getStudentInfo().getProgrammersImg(), false));
 
-        // ✅ answerList 추가 (toAnswerListMap() 사용)
+        // ✅ 문서에 제목 추가 (굵게, 큰 글씨)
+        requests.add(insertText("지원자 정보", true));
+        requests.add(insertStyledText("이름: " + request.getStudentInfo().getName(), false));
+        requests.add(insertStyledText("학번: " + request.getStudentInfo().getStudentId(), false));
+        requests.add(insertStyledText("전공: " + request.getStudentInfo().getMajor(), false));
+        requests.add(insertStyledText("이메일: " + request.getStudentInfo().getEmail(), false));
+        requests.add(insertStyledText("전화번호: " + request.getStudentInfo().getPhoneNumber(), false));
+        requests.add(insertStyledText("트랙: " + request.getStudentInfo().getTrack(), false));
+        requests.add(insertStyledText("포트폴리오: " + request.getStudentInfo().getPortfolio(), false));
+        requests.add(insertStyledText("졸업 예정 연도: " + request.getStudentInfo().getGraduatedYear(), false));
+        requests.add(insertStyledText("프로그래머스 인증: " + request.getStudentInfo().getProgrammersImg(), false));
+
+        // ✅ 문항 & 답변 추가
         requests.add(insertText("\n[지원서 문항 및 답변]", true));
         request.getAnswerListRequest().toAnswerListMap().forEach((question, answer) -> {
-            requests.add(insertText(question + ": " + answer, false));
+            requests.add(insertStyledText(question + ": " + answer, false));
         });
 
         // 🔹 Google Docs 업데이트 실행
@@ -91,18 +92,40 @@ public class GoogleDocsService {
     }
 
     /**
-     * 📌 Google Docs에 텍스트 추가하는 메서드
+     * 📌 Google Docs에 일반 텍스트 추가 (제목 여부 선택)
      */
     private Request insertText(String content, boolean isTitle) {
-        TextStyle textStyle = new TextStyle();
-        if (isTitle) {
-            textStyle.setBold(true).setFontSize(new Dimension().setMagnitude(14.0));
-        }
+        return new Request().setInsertText(
+                new InsertTextRequest()
+                        .setText(content + "\n")
+                        .setEndOfSegmentLocation(new EndOfSegmentLocation())
+        );
+    }
+
+    /**
+     * 📌 Google Docs에 스타일이 적용된 텍스트 추가
+     */
+    private Request insertStyledText(String content, boolean isTitle) {
+        TextStyle textStyle = new TextStyle()
+                .setFontSize(new Dimension().setMagnitude(isTitle ? 16.0 : 12.0)) // 제목은 크게
+                .setBold(isTitle); // 제목이면 굵게
 
         return new Request().setInsertText(
                 new InsertTextRequest()
                         .setText(content + "\n")
-                        .setEndOfSegmentLocation(new EndOfSegmentLocation())  // 🔹 문서 끝에 삽입
+                        .setEndOfSegmentLocation(new EndOfSegmentLocation())
         );
+    }
+
+    /**
+     * 📌 문단 스타일 (정렬) 적용
+     */
+    private Request updateParagraphStyle(int startIndex, int endIndex) {
+        return new Request()
+                .setUpdateParagraphStyle(new UpdateParagraphStyleRequest()
+                        .setRange(new Range().setStartIndex(startIndex).setEndIndex(endIndex))
+                        .setParagraphStyle(new ParagraphStyle()
+                                .setAlignment("START")) // ✅ LEFT → START (Google Docs API 요구 사항)
+                        .setFields("alignment"));
     }
 }

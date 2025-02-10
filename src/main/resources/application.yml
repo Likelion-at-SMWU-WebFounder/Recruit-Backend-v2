@@ -16,9 +16,9 @@ spring:
 
   datasource:
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: ${DB_URL}
-          username: ${DB_USERNAME}
-          password: ${DB_PASSWORD}
+          url: jdbc:mysql://localhost:3306/webfounder
+          username: webfounder_root
+          password: webfounder1234
 
   mail:
     host: smtp.gmail.com

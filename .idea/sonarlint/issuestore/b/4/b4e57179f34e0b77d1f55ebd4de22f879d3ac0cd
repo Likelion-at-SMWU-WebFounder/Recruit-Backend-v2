@@ -1,0 +1,3 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‰Ñøÿÿÿÿ
+s	java:S116"YRename this field "interview_time" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒ¬€çÿÿÿÿÿ

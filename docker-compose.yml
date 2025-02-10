@@ -15,6 +15,18 @@ services:
       SPRING_DATASOURCE_PASSWORD: webfounder1234
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
       SPRING_JPA_SHOW_SQL: "true"
+
+      # SMTP 설정 추가
+      SPRING_MAIL_HOST: smtp.gmail.com
+      SPRING_MAIL_PORT: 587
+      SPRING_MAIL_USERNAME: sookmyung@likelion.org
+      SPRING_MAIL_PASSWORD: hpgkklwzuirytnyg
+      SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH: "true"
+      SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE: "true"
+
+      # Google Docs API 환경변수 추가
+      GOOGLE_DOCS_DOCUMENT_ID: 1fovWBfWAWTdzvt3ixZlQunW0WSsLrrvTuJcDJ3Znaas
+
     networks:
       - recruit-backend-network
 
