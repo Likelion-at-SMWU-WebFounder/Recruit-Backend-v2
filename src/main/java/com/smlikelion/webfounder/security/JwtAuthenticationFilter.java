@@ -5,6 +5,7 @@ import com.smlikelion.webfounder.security.exception.InvalidTokenException;
 import io.jsonwebtoken.ExpiredJwtException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -23,14 +24,32 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final JwtTokenProvider jwtTokenProvider;
 
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+            throws ServletException, IOException {
+
         log.info("JwtAuthenticationFilter - doFilterInternal is invoked!");
-        try{
+
+        try {
+            // ✅ OPTIONS 요청은 필터를 건너뛰고 다음 필터로 진행
+            if (request.getMethod().equals(HttpMethod.OPTIONS.name())) {
+                log.info("OPTIONS 요청이므로 필터를 건너뜁니다.");
+                filterChain.doFilter(request, response);
+                return;
+            }
+
+            // ✅ 특정 경로 필터링 (JWT 인증 없이 접근 가능)
+            String path = request.getRequestURI();
+            if (path.startsWith("/health-check") || path.startsWith("/security-check") || path.startsWith("/reissue")) {
+                log.info("JWT 인증을 건너뛰는 경로입니다: " + path);
+                filterChain.doFilter(request, response);
+                return;
+            }
+
             String bearerToken = request.getHeader(AUTHORIZATION_HEADER);
             if (bearerToken == null) {
                 throw new EmptyTokenException("Authorization 헤더에 토큰이 없습니다.");
             }
-            if (!bearerToken.startsWith("Bearer ")){
+            if (!bearerToken.startsWith("Bearer ")) {
                 throw new InvalidTokenException("토큰 형태가 올바르지 않습니다.");
             }
 
@@ -47,14 +66,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             } else {
                 throw new InvalidTokenException("토큰 유효성을 검증하지 못했습니다.");
             }
+
             filterChain.doFilter(request, response);
-        }
-        catch(ExpiredJwtException e) {
-            log.error("doFilterInternal 메서드에서 ExpiredJwtException이 발생했습니다. 토큰이 만료되었습니다.");
+        } catch (ExpiredJwtException e) {
+            log.error("토큰이 만료되었습니다.");
             throw new InvalidTokenException("토큰이 만료되었습니다.");
-        }
-        catch(NullPointerException e) {
-            log.error("doFilterInternal 메서드에서 NullPointerException이 발생했습니다.");
+        } catch (NullPointerException e) {
+            log.error("Authorization 헤더에 토큰이 없습니다.");
             throw new EmptyTokenException("Authorization 헤더에 토큰이 없습니다.");
         }
     }
