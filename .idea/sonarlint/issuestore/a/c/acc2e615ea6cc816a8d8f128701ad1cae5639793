@@ -1,15 +1,15 @@
 
-b	java:S112Z"FDefine and throw a dedicated exception instead of using a generic one.(Ôàı8»Ì ÖÎ2
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(í¿•ıÿÿÿÿ8İ§âÌ2J$b2e45dba-536c-428c-a70f-074555596fa3
+ˆ	java:S112Z"FDefine and throw a dedicated exception instead of using a generic one.(Ôàı8»Ì ÖÎ2J$ac005ffe-3e89-4e02-b5e9-176b5f7e3700
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(í¿•ıÿÿÿÿ8İ§âÌ2J$355cf231-0793-4da0-a3ca-0d070852ec90
 y
-java:S1874%"6Remove this use of "JacksonFactory"; it is deprecated.(«·¢ß8Šë Í2J$593f7b19-ce00-4242-8d14-d71dfe953c72
-I
-java:S1602D",Remove useless curly braces around statement(À‚“8‹Í ÖÎ2
-J
-java:S1172a".Remove this unused method parameter "isTitle".(Ôúë08šÍ ÖÎ2
-_
-java:S1854m"=Remove this useless assignment to local variable "textStyle".(šºÖıÿÿÿÿ8¥Í ÖÎ2
-P
-java:S1481m".Remove this unused "textStyle" local variable.(šºÖıÿÿÿÿ8«Í ÖÎ2
-V
-java:S1144{"9Remove this unused private "updateParagraphStyle" method.(¬Ä•8¶Í ÖÎ2
+java:S1874%"6Remove this use of "JacksonFactory"; it is deprecated.(«·¢ß8Šë Í2J$41264112-c075-4d76-8f96-06ad5b011be4
+o
+java:S1602D",Remove useless curly braces around statement(À‚“8‹Í ÖÎ2J$bb31fc28-c766-40c0-b464-3a95b4e2fbe1
+p
+java:S1172a".Remove this unused method parameter "isTitle".(Ôúë08šÍ ÖÎ2J$14fcbd78-a16a-42a0-a50e-bc7bc00f36c2
+…
+java:S1854m"=Remove this useless assignment to local variable "textStyle".(šºÖıÿÿÿÿ8¥Í ÖÎ2J$9ca0211a-a3b0-4524-bf40-2e810ff75fed
+v
+java:S1481m".Remove this unused "textStyle" local variable.(šºÖıÿÿÿÿ8«Í ÖÎ2J$fe7712e4-60be-48ff-b625-c90536dfb23e
+|
+java:S1144{"9Remove this unused private "updateParagraphStyle" method.(¬Ä•8¶Í ÖÎ2J$935e5e0f-5a51-4c47-8da7-9bb605b36916

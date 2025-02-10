@@ -16,7 +16,7 @@ spring:
 
   datasource:
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://localhost:3306/webfounder
+          url: jdbc:mysql://mysql-container:3306/webfounder
           username: webfounder_root
           password: webfounder1234
 
