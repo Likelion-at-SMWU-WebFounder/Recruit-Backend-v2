@@ -53,3 +53,5 @@ Rsrc/main/java/com/smlikelion/webfounder/Recruit/Dto/Request/AnswerListRequest.j
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+‹
+[src/main/java/com/smlikelion/webfounder/Recruit/Dto/Request/JoinerInterviewTimeRequest.java,b/4/b4e57179f34e0b77d1f55ebd4de22f879d3ac0cd

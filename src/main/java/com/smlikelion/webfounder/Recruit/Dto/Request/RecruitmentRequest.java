@@ -1,5 +1,6 @@
 package com.smlikelion.webfounder.Recruit.Dto.Request;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.smlikelion.webfounder.Recruit.Entity.Joiner;
 import com.sun.istack.NotNull;
 import lombok.Getter;
@@ -18,6 +19,7 @@ public class RecruitmentRequest {
     // 답변
     @NotNull
     @Valid
+    @JsonProperty("answerList")
     private AnswerListRequest answerList;
 
 
