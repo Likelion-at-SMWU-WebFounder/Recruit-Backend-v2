@@ -63,6 +63,8 @@ dependencies {
 	implementation 'com.google.auth:google-auth-library-oauth2-http:1.22.0'
 	implementation 'com.google.http-client:google-http-client-jackson2:1.43.3'
 
+	implementation 'mysql:mysql-connector-java:8.0.33'
+
 }
 
 tasks.named('bootBuildImage') {
