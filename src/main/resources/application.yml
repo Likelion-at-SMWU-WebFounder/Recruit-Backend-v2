@@ -23,8 +23,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: ${mail.username}
-    password: ${mail.password}
+    username: sookmyung@likelion.org
+    password: hpgkklwzuirytnyg
     properties:
       mail:
         smtp:
@@ -56,7 +56,11 @@ logging:
 
 
 secret:
-  jwt: aBcDeFgHiJkLmNoPqRsTuVwXyZ0123456789AbCdEfGhIjKlMnOpQrStUvWxYz
+  jwt: ${JWT_SECRET}
 
-
-
+google:
+  docs:
+    credentials: classpath:credentials.json
+    application-name: Recruitment System
+    scope: https://www.googleapis.com/auth/documents
+    document-id: ${GOOGLE_DOCS_DOCUMENT_ID}
