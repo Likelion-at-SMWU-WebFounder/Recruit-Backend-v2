@@ -1,15 +1,15 @@
 
-ˆ	java:S112Z"FDefine and throw a dedicated exception instead of using a generic one.(Ôàı8»Ì ÖÎ2J$ac005ffe-3e89-4e02-b5e9-176b5f7e3700
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(í¿•ıÿÿÿÿ8İ§âÌ2J$355cf231-0793-4da0-a3ca-0d070852ec90
+ˆ	java:S112\"FDefine and throw a dedicated exception instead of using a generic one.(Ôàı8²ú›ûĞ2J$0c7980b3-d6e3-49a6-817e-768be8749f75
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(í¿•ıÿÿÿÿ8¶ú›ûĞ2J$9602b468-9201-4886-a321-abc07af7676d
 y
-java:S1874%"6Remove this use of "JacksonFactory"; it is deprecated.(«·¢ß8Šë Í2J$41264112-c075-4d76-8f96-06ad5b011be4
+java:S1874%"6Remove this use of "JacksonFactory"; it is deprecated.(«·¢ß8Úú›ûĞ2J$9c3f0fdf-7e7f-47ff-a5b9-d564bb33e3b4
 o
-java:S1602D",Remove useless curly braces around statement(À‚“8‹Í ÖÎ2J$bb31fc28-c766-40c0-b464-3a95b4e2fbe1
+java:S1602F",Remove useless curly braces around statement(À‚“8ìú›ûĞ2J$f4094ce1-b465-4da7-b9d6-6544479e8a28
 p
-java:S1172a".Remove this unused method parameter "isTitle".(Ôúë08šÍ ÖÎ2J$14fcbd78-a16a-42a0-a50e-bc7bc00f36c2
+java:S1172c".Remove this unused method parameter "isTitle".(Ôúë08ôú›ûĞ2J$9290ea2b-e96f-47da-9be4-15fe8983c248
 …
-java:S1854m"=Remove this useless assignment to local variable "textStyle".(šºÖıÿÿÿÿ8¥Í ÖÎ2J$9ca0211a-a3b0-4524-bf40-2e810ff75fed
+java:S1854o"=Remove this useless assignment to local variable "textStyle".(šºÖıÿÿÿÿ8ùú›ûĞ2J$4a1fc772-582b-4a4f-9d03-b6fb8251e25f
 v
-java:S1481m".Remove this unused "textStyle" local variable.(šºÖıÿÿÿÿ8«Í ÖÎ2J$fe7712e4-60be-48ff-b625-c90536dfb23e
+java:S1481o".Remove this unused "textStyle" local variable.(šºÖıÿÿÿÿ8üú›ûĞ2J$8943ff7e-d9c6-4a81-8b2e-ad2046397b58
 |
-java:S1144{"9Remove this unused private "updateParagraphStyle" method.(¬Ä•8¶Í ÖÎ2J$935e5e0f-5a51-4c47-8da7-9bb605b36916
+java:S1144}"9Remove this unused private "updateParagraphStyle" method.(¬Ä•8‚û›ûĞ2J$227ee06a-1419-46f6-843a-2e95e220cc49

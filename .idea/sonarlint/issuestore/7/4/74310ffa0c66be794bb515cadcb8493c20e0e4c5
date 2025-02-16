@@ -1,9 +1,9 @@
 
-š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‰ÑøÿÿÿÿJ$eccc9fd4-f085-46e5-9a21-6017f1b744c1
-	java:S116"MRename this field "A1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú°ƒòşÿÿÿÿJ$3be14357-b506-4c14-9f34-fd59e6680fef
-	java:S116"MRename this field "A2" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦ãÆüÿÿÿÿJ$f6ba82ab-e4da-4f05-bc03-589a765c1832
-	java:S116"MRename this field "A3" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ÍèøÿÿÿÿJ$ea8d7901-1de4-46c9-8223-e92446b2e391
-	java:S116"MRename this field "A4" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍÄÒ‹øÿÿÿÿJ$3862e05a-dff7-431e-b2d9-0a125f51aa44
-‡	java:S116"MRename this field "A5" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ù®Ú-J$1533c815-09e4-48f3-8668-ca848f7206fa
-ˆ	java:S116"MRename this field "A6" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁÕ³J$a8deec08-b1f7-4a1e-bf9e-7cf891c26674
-	java:S116"MRename this field "A7" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß£°úÿÿÿÿJ$a6cb2fb4-135d-449c-a0fe-a4969e22e7ec
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‰ÑøÿÿÿÿJ$cd3d13ef-95af-429d-99d2-eb63ee1f91d3
+	java:S116"MRename this field "A1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú°ƒòşÿÿÿÿJ$e53925d2-0ca1-4a8c-bae2-f108fd366699
+	java:S116"MRename this field "A2" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦ãÆüÿÿÿÿJ$a3fe7388-c9fc-49d4-ae6e-de699c699887
+	java:S116"MRename this field "A3" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ÍèøÿÿÿÿJ$5a49d38e-13f9-4f5a-acf7-810654145bee
+	java:S116"MRename this field "A4" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍÄÒ‹øÿÿÿÿJ$4cb627a9-95a1-40e0-9a3a-5c3e692425cc
+‡	java:S116"MRename this field "A5" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ù®Ú-J$77475733-fcba-4222-8c88-b0a69ee909f3
+ˆ	java:S116"MRename this field "A6" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁÕ³J$2a8510ba-4590-4706-b1f1-e3137684c972
+	java:S116"MRename this field "A7" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß£°úÿÿÿÿJ$14119141-50cd-4fc3-9bff-f9ac355bd3ec

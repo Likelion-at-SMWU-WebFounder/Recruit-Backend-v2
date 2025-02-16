@@ -60,6 +60,8 @@ public class GoogleDocsService {
         requests.add(insertStyledText("전화번호: " + request.getStudentInfo().getPhoneNumber(), false));
         requests.add(insertStyledText("트랙: " + request.getStudentInfo().getTrack(), false));
         requests.add(insertStyledText("포트폴리오: " + request.getStudentInfo().getPortfolio(), false));
+        // ✅ 🔹 "수료 학기" 추가
+        requests.add(insertStyledText("수료 학기: " + request.getStudentInfo().getCompletedSem() + "학기", false));
         requests.add(insertStyledText("졸업 예정 연도: " + request.getStudentInfo().getGraduatedYear(), false));
         requests.add(insertStyledText("프로그래머스 인증: " + request.getStudentInfo().getProgrammersImg(), false));
 
