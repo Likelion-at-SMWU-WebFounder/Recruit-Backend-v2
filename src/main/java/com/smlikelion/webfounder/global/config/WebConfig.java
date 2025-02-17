@@ -34,7 +34,7 @@ public class WebConfig implements WebMvcConfigurer {
                         "https://d3vjgf9am7gpdo.cloudfront.net", "https://to4er5ywoj.execute-api.ap-northeast-2.amazonaws.com", // 2기
                         "http://sooklion-bucket.s3-website.ap-northeast-2.amazonaws.com",
                         "http://smadminlion.store", "http://smwu-likelion.com.s3-website.ap-northeast-2.amazonaws.com",
-                        "https://api.smwulion.com", "http://15.164.213.172:8080", "http://13.209.13.138", "http://smwulion.com"
+                        "https://api.smwulion.com", "http://15.164.213.172:8080", "http://13.209.13.138", "http://smwulion.com", "http://smwulion-admin.s3-website-us-east-1.amazonaws.com"
                 )  // 허용할 클라이언트 도메인
                 .allowedMethods("*") // "GET", "POST", "PUT", "DELETE" 외에도 "OPTIONS", "HEAD" 등이 있음
                 .allowedHeaders("*")
