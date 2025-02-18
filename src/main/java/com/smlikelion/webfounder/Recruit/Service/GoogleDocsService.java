@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.javanet.NetHttpTransport;
@@ -60,16 +59,36 @@ public class GoogleDocsService {
         requests.add(insertStyledText("전화번호: " + request.getStudentInfo().getPhoneNumber(), false));
         requests.add(insertStyledText("트랙: " + request.getStudentInfo().getTrack(), false));
         requests.add(insertStyledText("포트폴리오: " + request.getStudentInfo().getPortfolio(), false));
-        // ✅ 🔹 "수료 학기" 추가
-        requests.add(insertStyledText("수료 학기: " + request.getStudentInfo().getCompletedSem() + "학기", false));
         requests.add(insertStyledText("졸업 예정 연도: " + request.getStudentInfo().getGraduatedYear(), false));
-        requests.add(insertStyledText("프로그래머스 인증: " + request.getStudentInfo().getProgrammersImg(), false));
+        requests.add(insertStyledText("수료 학기: " + request.getStudentInfo().getCompletedSem() + "학기", false));
+
+        // ✅ 추가된 부분: 재/휴학 여부, 프로그래머스 수강 여부
+        requests.add(insertStyledText("재/휴학 여부: " + request.getStudentInfo().getSchoolStatus(), false));
+        requests.add(insertStyledText("프로그래머스 수강 여부: " + request.getStudentInfo().getProgrammers(), false));
+
+        // ✅ 개인정보 및 행사 참여 동의 여부 추가
+        requests.add(insertStyledText("개인정보 동의 여부: " + (request.getStudentInfo().isAgreeToTerms() ? "동의" : "비동의"), false));
+        requests.add(insertStyledText("행사 필수참여 동의 여부: " + (request.getStudentInfo().isAgreeToEventParticipation() ? "동의" : "비동의"), false));
 
         // ✅ 문항 & 답변 추가
         requests.add(insertText("\n[지원서 문항 및 답변]", true));
         request.getAnswerListRequest().toAnswerListMap().forEach((question, answer) -> {
             requests.add(insertStyledText(question + ": " + answer, false));
         });
+
+        // ✅ 추가된 부분: 면접 시간을 날짜 순으로 정렬하여 추가
+        if (request.getInterview_time() != null && !request.getInterview_time().isEmpty()) {
+            requests.add(insertText("\n[면접 가능 시간]", true));
+
+            // 날짜 정렬
+            List<String> sortedDates = new ArrayList<>(request.getInterview_time().keySet());
+            Collections.sort(sortedDates);
+
+            for (String date : sortedDates) {
+                String time = request.getInterview_time().get(date);
+                requests.add(insertStyledText(date + ": " + time, false));
+            }
+        }
 
         // 🔹 Google Docs 업데이트 실행
         BatchUpdateDocumentRequest body = new BatchUpdateDocumentRequest().setRequests(requests);
@@ -117,17 +136,5 @@ public class GoogleDocsService {
                         .setText(content + "\n")
                         .setEndOfSegmentLocation(new EndOfSegmentLocation())
         );
-    }
-
-    /**
-     * 📌 문단 스타일 (정렬) 적용
-     */
-    private Request updateParagraphStyle(int startIndex, int endIndex) {
-        return new Request()
-                .setUpdateParagraphStyle(new UpdateParagraphStyleRequest()
-                        .setRange(new Range().setStartIndex(startIndex).setEndIndex(endIndex))
-                        .setParagraphStyle(new ParagraphStyle()
-                                .setAlignment("START")) // ✅ LEFT → START (Google Docs API 요구 사항)
-                        .setFields("alignment"));
     }
 }
