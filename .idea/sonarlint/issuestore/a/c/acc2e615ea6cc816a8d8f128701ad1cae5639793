@@ -1,13 +1,13 @@
 
-ˆ	java:S112o"FDefine and throw a dedicated exception instead of using a generic one.(Ôàı8°œÄ¾Ñ2J$7a640f69-3880-4535-822d-1ab6221e2849
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(í¿•ıÿÿÿÿ8¶ú›ûĞ2J$83cdc052-7b28-4d04-9754-6a8261da594f
+ˆ	java:S112o"FDefine and throw a dedicated exception instead of using a generic one.(Ôàı8°œÄ¾Ñ2J$81154ac7-7abe-4bc9-82b3-6bd7618351ca
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(í¿•ıÿÿÿÿ8¶ú›ûĞ2J$fa2b38b5-d375-47b7-86b2-30125a3bde7f
 y
-java:S1874$"6Remove this use of "JacksonFactory"; it is deprecated.(«·¢ß8Éá¾Ñ2J$ae9f6876-78b4-4726-96f3-934ad766de95
+java:S1874$"6Remove this use of "JacksonFactory"; it is deprecated.(«·¢ß8Éá¾Ñ2J$985722e8-9be6-47c6-af2c-a10a4d944bd6
 o
-java:S1602K",Remove useless curly braces around statement(À‚“8ÙœÄ¾Ñ2J$bee2b4a0-8505-43b9-885f-9f34bfdae6b7
+java:S1602K",Remove useless curly braces around statement(À‚“8ÙœÄ¾Ñ2J$eea6bda5-f55e-4fdc-85a4-e55e56abaa20
 p
-java:S1172v".Remove this unused method parameter "isTitle".(Ôúë08äœÄ¾Ñ2J$0c296025-5377-4ea0-83af-f5d3bcbfde4d
+java:S1172v".Remove this unused method parameter "isTitle".(Ôúë08äœÄ¾Ñ2J$9ea3ea79-256f-4a76-a57d-13cee9e40f4d
 †
-java:S1854‚"=Remove this useless assignment to local variable "textStyle".(šºÖıÿÿÿÿ8èœÄ¾Ñ2J$390fee81-8e2d-46de-94b6-9fed1105bf27
+java:S1854‚"=Remove this useless assignment to local variable "textStyle".(šºÖıÿÿÿÿ8èœÄ¾Ñ2J$b810d9b9-5168-4d91-912d-91240ce0ba4a
 w
-java:S1481‚".Remove this unused "textStyle" local variable.(šºÖıÿÿÿÿ8êœÄ¾Ñ2J$bc1cd631-a42f-42cf-9734-8e38af5e8d1f
+java:S1481‚".Remove this unused "textStyle" local variable.(šºÖıÿÿÿÿ8êœÄ¾Ñ2J$08227df2-9ace-4769-9e24-8453c0ff6b30

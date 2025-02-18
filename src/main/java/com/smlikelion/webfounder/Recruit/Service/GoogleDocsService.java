@@ -51,7 +51,7 @@ public class GoogleDocsService {
         List<Request> requests = new ArrayList<>();
 
         // ✅ 문서에 제목 추가 (굵게, 큰 글씨)
-        requests.add(insertText("지원자 정보", true));
+        requests.add(insertText("[지원자 정보]", true));
         requests.add(insertStyledText("이름: " + request.getStudentInfo().getName(), false));
         requests.add(insertStyledText("학번: " + request.getStudentInfo().getStudentId(), false));
         requests.add(insertStyledText("전공: " + request.getStudentInfo().getMajor(), false));
