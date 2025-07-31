@@ -50,10 +50,10 @@ public class ManageController {
     @GetMapping("/docs/quest")
     @ResponseStatus(HttpStatus.OK)
     public BaseResponse<List<DocsQuestResponse>> retrieveQuestionByYearAndTrack(
-            @Auth AuthInfo authInfo,
+            //@Auth AuthInfo authInfo,
             @RequestParam("year") Long year,
             @RequestParam("track") String track) {
-        return new BaseResponse<>(manageService.retrieveQuestionByYearAndTrack(authInfo, year, track));
+        return new BaseResponse<>(manageService.retrieveQuestionByYearAndTrack(year, track));
     }
 
     @Operation(summary = "서류 질문 삭제하기")

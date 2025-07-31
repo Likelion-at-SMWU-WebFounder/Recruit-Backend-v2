@@ -39,7 +39,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
             // ✅ 특정 경로 필터링 (JWT 인증 없이 접근 가능)
             String path = request.getRequestURI();
-            if (path.startsWith("/health-check") || path.startsWith("/security-check") || path.startsWith("/reissue")) {
+            if (path.startsWith("/health-check") || path.startsWith("/security-check") || path.startsWith("/reissue") || path.startsWith("/docs/quest")) {
                 log.info("JWT 인증을 건너뛰는 경로입니다: " + path);
                 filterChain.doFilter(request, response);
                 return;

@@ -129,10 +129,8 @@ public class ManageService {
         return mapQuestionToDocsQuestResponse(question);
     }
 
-    public List<DocsQuestResponse> retrieveQuestionByYearAndTrack(AuthInfo authInfo, Long year, String track) {
-        if(!hasValidRoles(authInfo, List.of(Role.SUPERUSER, Role.MANAGER))) {
-            throw new UnauthorizedRoleException("접근 권한이 없습니다.");
-        }
+    public List<DocsQuestResponse> retrieveQuestionByYearAndTrack(Long year, String track) {
+
 
         Track requestedTrack = validateTrackName(track);
 

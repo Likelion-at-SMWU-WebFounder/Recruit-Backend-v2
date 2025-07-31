@@ -21,7 +21,7 @@ repositories {
 	mavenCentral()
 	maven { url 'https://repo.spring.io/milestone' }
 	maven { url 'https://repo.spring.io/snapshot' }
-	maven { url 'https://maven.google.com' }  // Google Maven Repository 추가
+	maven { url 'https://maven.google.com' }  // Google Maven Repository 추가하기
 }
 
 dependencies {
@@ -74,3 +74,4 @@ tasks.named('bootBuildImage') {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
