@@ -7,12 +7,10 @@ import com.smlikelion.webfounder.manage.dto.response.DeleteDocsResponse;
 import com.smlikelion.webfounder.admin.exception.UnauthorizedRoleException;
 import com.smlikelion.webfounder.manage.repository.CandidateRepository;
 import com.smlikelion.webfounder.security.AuthInfo;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
