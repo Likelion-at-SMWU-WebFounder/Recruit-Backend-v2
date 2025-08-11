@@ -25,11 +25,7 @@ public interface CandidateRepository extends JpaRepository<Candidate, Long> {
     @Query("SELECT j, c FROM Joiner j JOIN Candidate c ON j = c.joiner WHERE c.docs = ?1")
     List<Object[]> findAllJoinerAndCandidateByDocs(Docs docs);
 
-    // 필요한 경우 미리 가져오는 메서드 (옵션)
-    List<Candidate> findAllByJoiner_IdIn(Collection<Long> joinerIds);
-
-    // 실제 배치 삭제
     @Modifying(clearAutomatically = true, flushAutomatically = true)
-    @Query("delete from Candidate c where c.joiner.Id in :joinerIds")
+    @Query("delete from Candidate c where c.joiner.id in :joinerIds") // Joiner의 필드명이 id여야 함(= getId)
     int deleteByJoinerIds(@Param("joinerIds") Collection<Long> joinerIds);
 }
