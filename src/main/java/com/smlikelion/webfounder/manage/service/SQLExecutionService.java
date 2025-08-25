@@ -97,6 +97,23 @@ public class SQLExecutionService {
         return success;
     }
 
+    public String deleteAllDocs(AuthInfo authInfo) {
+        if(!hasValidRoles(authInfo, List.of(Role.SUPERUSER))) {
+            throw new UnauthorizedRoleException("접근 권한이 없습니다.");
+        }
+
+        try {
+            candidateRepository.deleteAll();
+            joinerRepository.deleteAll();
+            resetAutoIncrement("candidate");
+            resetAutoIncrement("joiner");
+        } catch (Exception e) {
+            return "서류 합격자 전체 삭제 실패";
+        }
+
+        return "서류 합격자 전체 삭제 완료";
+    }
+
     @Transactional
     public void executeSql(String sql) {
         jdbcTemplate.execute(sql);

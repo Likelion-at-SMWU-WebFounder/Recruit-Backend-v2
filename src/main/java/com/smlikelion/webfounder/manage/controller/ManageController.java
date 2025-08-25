@@ -26,8 +26,7 @@ import org.springframework.web.bind.annotation.*;
 import com.smlikelion.webfounder.Recruit.Entity.Joiner;
 
 
-//import javax.validation.Valid;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Map;
 
