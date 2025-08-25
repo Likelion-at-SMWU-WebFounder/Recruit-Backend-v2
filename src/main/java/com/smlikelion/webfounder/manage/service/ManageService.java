@@ -357,7 +357,7 @@ public class ManageService {
     }
 
     private InterviewPassResponseDto mapJoinerToResponse(Joiner joiner){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
         return InterviewPassResponseDto.builder()
                 .joinerId(joiner.getId())
@@ -365,7 +365,7 @@ public class ManageService {
                 .phoneNum(joiner.getPhoneNum())
                 .studentID(joiner.getStudentId())
                 .track(joiner.getTrack().getTrackName())
-                .submissionTime(joiner.getCreatedAt().format(formatter))
+                .submissionTime(joiner.getCreatedAt())
                 .build();
     }
 

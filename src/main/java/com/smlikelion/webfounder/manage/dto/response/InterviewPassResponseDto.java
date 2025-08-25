@@ -3,6 +3,7 @@ package com.smlikelion.webfounder.manage.dto.response;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import java.time.LocalDateTime;
 
 @Getter
 @AllArgsConstructor
@@ -13,5 +14,5 @@ public class InterviewPassResponseDto {
     private String phoneNum;
     private String studentID;
     private String track;
-    private String submissionTime;
+    private LocalDateTime submissionTime;
 }
