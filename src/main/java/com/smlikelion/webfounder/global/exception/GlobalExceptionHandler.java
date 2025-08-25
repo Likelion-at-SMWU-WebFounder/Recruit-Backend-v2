@@ -1,12 +1,12 @@
 package com.smlikelion.webfounder.global.exception;
 
 import com.smlikelion.webfounder.Recruit.exception.DuplicateStudentIdException;
+import com.smlikelion.webfounder.admin.exception.UnauthorizedRoleException;
 import com.smlikelion.webfounder.global.dto.response.BaseResponse;
 import com.smlikelion.webfounder.global.dto.response.ErrorCode;
 import com.smlikelion.webfounder.global.dto.response.GlobalExceptionResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -51,6 +51,14 @@ public class GlobalExceptionHandler {
         log.warn("GLOBAL-001> 요청 URI: " + request.getRequestURI() + ", 에러메세지: " + "Invalid input value");
         return new BaseResponse<>(ErrorCode.INVALID_INPUT_VALUE_ERROR, "Invalid input value");
     }
+
+    @ExceptionHandler(UnauthorizedRoleException.class)
+    @ResponseStatus(HttpStatus.FORBIDDEN)
+    public BaseResponse<?> handleUnauthorizedRoleException(UnauthorizedRoleException ex, HttpServletRequest request) {
+        log.warn("GLOBAL-006> 요청 URI: {}, 에러메세지: {}", request.getRequestURI(), ex.getMessage());
+        return new BaseResponse<>(ErrorCode.UNAUTHORIZED_ERROR, ex.getMessage());
+    }
+
 }
 
 //{field: , content: }
