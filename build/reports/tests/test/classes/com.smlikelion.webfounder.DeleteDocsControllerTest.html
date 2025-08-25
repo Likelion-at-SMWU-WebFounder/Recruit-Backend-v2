@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - DeleteDocsControllerTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>DeleteDocsControllerTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.smlikelion.webfounder.html">com.smlikelion.webfounder</a> &gt; DeleteDocsControllerTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">3</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.518s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">deleteSelectedDocs_forbidden_403_when_role_is_user()</td>
+<td class="success">0.020s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">deleteSelectedDocs_success_200_and_serviceCalledWithIds()</td>
+<td class="success">0.471s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">deleteSelectedDocs_validation_400_when_missing_or_empty()</td>
+<td class="success">0.027s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>11:20:37.878 [Test worker] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+11:20:37.880 [Test worker] INFO org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.5.Final
+11:20:37.885 [Test worker] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+11:20:37.885 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+11:20:37.885 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+11:20:37.886 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+11:20:37.886 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+11:20:37.886 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+11:20:37.887 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+11:20:37.888 [Test worker] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+11:20:37.888 [Test worker] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+11:20:37.908 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+11:20:37.910 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+11:20:37.910 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+11:20:37.910 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+11:20:37.910 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+11:20:37.910 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+11:20:37.942 [Test worker] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
+	c.s.w.m.c.ManageController:
+	{GET [/api/manage/docs/quest]}: retrieveQuestionByYearAndTrack(Long,String)
+	{POST [/api/manage/docs/add]}: docsPass(DocsInterPassRequestDto)
+	{DELETE [/api/manage/docs/del]}: docsFail(DocsInterPassRequestDto)
+	{DELETE [/api/manage/apply/docs]}: deleteAllDocs(AuthInfo)
+	{POST [/api/manage/docs/quest]}: registerQuestion(AuthInfo,DocsQuestRequest)
+	{DELETE [/api/manage/docs/quest/{id}]}: deleteQuestion(AuthInfo,Long)
+	{PUT [/api/manage/docs/quest/{id}]}: updateQuestion(AuthInfo,Long,DocsQuestRequest)
+	{PUT [/api/manage/docs/quests]}: updateQuestions(AuthInfo,List)
+	{POST [/api/manage/interview/add]}: interviewPass(DocsInterPassRequestDto)
+	{DELETE [/api/manage/interview/del]}: interviewFail(DocsInterPassRequestDto)
+	{GET [/api/manage/docs/result]}: docsPassList(String)
+	{GET [/api/manage/interview/result]}: interviewPassList(String)
+	{POST [/api/manage/interviewtime]}: setInterviewTime(InterviewTimeRequest)
+	{GET [/api/manage/interviewtime/{joinerId}]}: getInterviewTime(Long)
+	{GET [/api/manage/apply]}: getApplicationStatus(AuthInfo,String,int,int)
+	{PUT [/api/manage/interviewtime]}: updateInterviewTime(InterviewTimeRequest)
+	{POST [/api/manage/apply/docs/delete]}: deleteSelectedDocs(AuthInfo,DeleteDocsRequest)
+11:20:37.946 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 17 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+11:20:38.009 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+11:20:38.017 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+11:20:38.023 [Test worker] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+11:20:38.023 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+11:20:38.023 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+11:20:38.023 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+11:20:38.024 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@3b4825f0
+11:20:38.024 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@40ac6b76
+11:20:38.024 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+11:20:38.024 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+11:20:38.031 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - POST &quot;/api/manage/apply/docs/delete&quot;, parameters={}
+11:20:38.032 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to com.smlikelion.webfounder.manage.controller.ManageController#deleteSelectedDocs(AuthInfo, DeleteDocsRequest)
+11:20:38.061 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Read &quot;application/json&quot; to [com.smlikelion.webfounder.manage.dto.request.DeleteDocsRequest@603cabc4]
+11:20:38.087 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+11:20:38.088 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Writing [com.smlikelion.webfounder.global.dto.response.BaseResponse@477021ee]
+11:20:38.092 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
+11:20:38.122 [Test worker] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+11:20:38.123 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+11:20:38.123 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+11:20:38.123 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+11:20:38.123 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+11:20:38.123 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+11:20:38.123 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+11:20:38.123 [Test worker] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+11:20:38.123 [Test worker] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+11:20:38.124 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+11:20:38.124 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+11:20:38.124 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+11:20:38.124 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+11:20:38.124 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+11:20:38.124 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+11:20:38.127 [Test worker] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
+	c.s.w.m.c.ManageController:
+	{GET [/api/manage/docs/quest]}: retrieveQuestionByYearAndTrack(Long,String)
+	{POST [/api/manage/docs/add]}: docsPass(DocsInterPassRequestDto)
+	{DELETE [/api/manage/docs/del]}: docsFail(DocsInterPassRequestDto)
+	{DELETE [/api/manage/apply/docs]}: deleteAllDocs(AuthInfo)
+	{POST [/api/manage/docs/quest]}: registerQuestion(AuthInfo,DocsQuestRequest)
+	{DELETE [/api/manage/docs/quest/{id}]}: deleteQuestion(AuthInfo,Long)
+	{PUT [/api/manage/docs/quest/{id}]}: updateQuestion(AuthInfo,Long,DocsQuestRequest)
+	{PUT [/api/manage/docs/quests]}: updateQuestions(AuthInfo,List)
+	{POST [/api/manage/interview/add]}: interviewPass(DocsInterPassRequestDto)
+	{DELETE [/api/manage/interview/del]}: interviewFail(DocsInterPassRequestDto)
+	{GET [/api/manage/docs/result]}: docsPassList(String)
+	{GET [/api/manage/interview/result]}: interviewPassList(String)
+	{POST [/api/manage/interviewtime]}: setInterviewTime(InterviewTimeRequest)
+	{GET [/api/manage/interviewtime/{joinerId}]}: getInterviewTime(Long)
+	{GET [/api/manage/apply]}: getApplicationStatus(AuthInfo,String,int,int)
+	{PUT [/api/manage/interviewtime]}: updateInterviewTime(InterviewTimeRequest)
+	{POST [/api/manage/apply/docs/delete]}: deleteSelectedDocs(AuthInfo,DeleteDocsRequest)
+11:20:38.128 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 17 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+11:20:38.130 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+11:20:38.131 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+11:20:38.131 [Test worker] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+11:20:38.131 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+11:20:38.131 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+11:20:38.131 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+11:20:38.131 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2dba05b1
+11:20:38.131 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@541afb85
+11:20:38.131 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+11:20:38.131 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 0 ms
+11:20:38.131 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - POST &quot;/api/manage/apply/docs/delete&quot;, parameters={}
+11:20:38.131 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to com.smlikelion.webfounder.manage.controller.ManageController#deleteSelectedDocs(AuthInfo, DeleteDocsRequest)
+11:20:38.133 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Read &quot;application/json&quot; to [com.smlikelion.webfounder.manage.dto.request.DeleteDocsRequest@445bce9a]
+11:20:38.136 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.smlikelion.webfounder.global.exception.GlobalExceptionHandler#handleUnauthorizedRoleException(UnauthorizedRoleException, HttpServletRequest)
+11:20:38.136 [Test worker] WARN com.smlikelion.webfounder.global.exception.GlobalExceptionHandler - GLOBAL-006&gt; 요청 URI: /api/manage/apply/docs/delete, 에러메세지: Access denied
+11:20:38.139 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+11:20:38.139 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Writing [com.smlikelion.webfounder.global.dto.response.BaseResponse@62c3f556]
+11:20:38.140 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - Resolved [com.smlikelion.webfounder.admin.exception.UnauthorizedRoleException: Access denied]
+11:20:38.140 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 403 FORBIDDEN
+11:20:38.142 [Test worker] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+11:20:38.142 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+11:20:38.142 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+11:20:38.142 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+11:20:38.142 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+11:20:38.142 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+11:20:38.142 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+11:20:38.142 [Test worker] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+11:20:38.143 [Test worker] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+11:20:38.143 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+11:20:38.143 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+11:20:38.143 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+11:20:38.143 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+11:20:38.143 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+11:20:38.144 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+11:20:38.146 [Test worker] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
+	c.s.w.m.c.ManageController:
+	{GET [/api/manage/docs/quest]}: retrieveQuestionByYearAndTrack(Long,String)
+	{POST [/api/manage/docs/add]}: docsPass(DocsInterPassRequestDto)
+	{DELETE [/api/manage/docs/del]}: docsFail(DocsInterPassRequestDto)
+	{DELETE [/api/manage/apply/docs]}: deleteAllDocs(AuthInfo)
+	{POST [/api/manage/docs/quest]}: registerQuestion(AuthInfo,DocsQuestRequest)
+	{DELETE [/api/manage/docs/quest/{id}]}: deleteQuestion(AuthInfo,Long)
+	{PUT [/api/manage/docs/quest/{id}]}: updateQuestion(AuthInfo,Long,DocsQuestRequest)
+	{PUT [/api/manage/docs/quests]}: updateQuestions(AuthInfo,List)
+	{POST [/api/manage/interview/add]}: interviewPass(DocsInterPassRequestDto)
+	{DELETE [/api/manage/interview/del]}: interviewFail(DocsInterPassRequestDto)
+	{GET [/api/manage/docs/result]}: docsPassList(String)
+	{GET [/api/manage/interview/result]}: interviewPassList(String)
+	{POST [/api/manage/interviewtime]}: setInterviewTime(InterviewTimeRequest)
+	{GET [/api/manage/interviewtime/{joinerId}]}: getInterviewTime(Long)
+	{GET [/api/manage/apply]}: getApplicationStatus(AuthInfo,String,int,int)
+	{PUT [/api/manage/interviewtime]}: updateInterviewTime(InterviewTimeRequest)
+	{POST [/api/manage/apply/docs/delete]}: deleteSelectedDocs(AuthInfo,DeleteDocsRequest)
+11:20:38.147 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 17 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+11:20:38.148 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+11:20:38.148 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+11:20:38.149 [Test worker] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+11:20:38.149 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+11:20:38.149 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+11:20:38.149 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+11:20:38.149 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7ed49a7f
+11:20:38.149 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@1cd6b1bd
+11:20:38.149 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+11:20:38.149 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 0 ms
+11:20:38.149 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - POST &quot;/api/manage/apply/docs/delete&quot;, parameters={}
+11:20:38.149 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to com.smlikelion.webfounder.manage.controller.ManageController#deleteSelectedDocs(AuthInfo, DeleteDocsRequest)
+11:20:38.150 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Read &quot;application/json&quot; to [com.smlikelion.webfounder.manage.dto.request.DeleteDocsRequest@443cdaa4]
+11:20:38.162 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.smlikelion.webfounder.global.exception.GlobalExceptionHandler#handleValidationException(MethodArgumentNotValidException, HttpServletRequest)
+11:20:38.164 [Test worker] WARN com.smlikelion.webfounder.global.exception.GlobalExceptionHandler - GLOBAL-001&gt; 요청 URI: /api/manage/apply/docs/delete, 에러메세지: Invalid input value
+11:20:38.165 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+11:20:38.165 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Writing [com.smlikelion.webfounder.global.dto.response.BaseResponse@33d7765a]
+11:20:38.166 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [1] in public com.smlikelion.webfounder.global.dto.response.BaseResponse&lt;com.smlikelion.webfounder.manage.dto.response.DeleteDocsResponse&gt; com.smlikelion.webfounder.manage.controller.ManageController.deleteSelectedDocs(com.smlikelion.webfounder.security.AuthInfo,com.smlikelion.webfounder.manage.dto.request.DeleteDocsRequest): [Field error in object 'deleteDocsRequest' on field 'joinerIds': rejected value [null]; codes [NotEmpty.deleteDocsRequest.joinerIds,NotEmpty.joinerIds,NotEmpty.java.util.List,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [deleteDocsRequest.joinerIds,joinerIds]; arguments []; default message [joinerIds]]; default message [삭제할 joinerId 목록은 비어 있을 수 없습니다.]] ]
+11:20:38.166 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 400 BAD_REQUEST
+11:20:38.166 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - POST &quot;/api/manage/apply/docs/delete&quot;, parameters={}
+11:20:38.166 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to com.smlikelion.webfounder.manage.controller.ManageController#deleteSelectedDocs(AuthInfo, DeleteDocsRequest)
+11:20:38.167 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Read &quot;application/json&quot; to [com.smlikelion.webfounder.manage.dto.request.DeleteDocsRequest@551be9f6]
+11:20:38.167 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.smlikelion.webfounder.global.exception.GlobalExceptionHandler#handleValidationException(MethodArgumentNotValidException, HttpServletRequest)
+11:20:38.167 [Test worker] WARN com.smlikelion.webfounder.global.exception.GlobalExceptionHandler - GLOBAL-001&gt; 요청 URI: /api/manage/apply/docs/delete, 에러메세지: Invalid input value
+11:20:38.167 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+11:20:38.167 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor - Writing [com.smlikelion.webfounder.global.dto.response.BaseResponse@13250132]
+11:20:38.168 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [1] in public com.smlikelion.webfounder.global.dto.response.BaseResponse&lt;com.smlikelion.webfounder.manage.dto.response.DeleteDocsResponse&gt; com.smlikelion.webfounder.manage.controller.ManageController.deleteSelectedDocs(com.smlikelion.webfounder.security.AuthInfo,com.smlikelion.webfounder.manage.dto.request.DeleteDocsRequest): [Field error in object 'deleteDocsRequest' on field 'joinerIds': rejected value [[]]; codes [NotEmpty.deleteDocsRequest.joinerIds,NotEmpty.joinerIds,NotEmpty.java.util.List,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [deleteDocsRequest.joinerIds,joinerIds]; arguments []; default message [joinerIds]]; default message [삭제할 joinerId 목록은 비어 있을 수 없습니다.]] ]
+11:20:38.168 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 400 BAD_REQUEST
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.4</a> at 2025. 8. 25. 오전 11:20:38</p>
+</div>
+</div>
+</body>
+</html>
