@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @AllArgsConstructor
 @Builder
@@ -15,5 +17,5 @@ public class DocsPassResponseDto {
     private String studentID;
     private String track;
     private String interviewTime;
-    private String submissionTime;
+    private LocalDateTime submissionTime;
 }

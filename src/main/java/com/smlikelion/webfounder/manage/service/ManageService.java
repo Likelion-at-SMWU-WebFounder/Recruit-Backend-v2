@@ -397,7 +397,7 @@ public class ManageService {
     }
 
     private DocsPassResponseDto mapJoinerAndCandidateToResponse(Joiner joiner, Candidate candidate){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
         return DocsPassResponseDto.builder()
                 .joinerId(joiner.getId())
@@ -406,7 +406,7 @@ public class ManageService {
                 .studentID(joiner.getStudentId())
                 .track(joiner.getTrack().getTrackName())
                 .interviewTime(candidate.getInterviewTime())
-                .submissionTime(joiner.getCreatedAt().format(formatter))
+                .submissionTime(joiner.getCreatedAt())
                 .build();
     }
 
@@ -461,7 +461,7 @@ public class ManageService {
     }
 
     private ApplicationDocumentPreview mapJoinerToApplicationDocumentPreview(Joiner joiner) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
         return ApplicationDocumentPreview.builder()
                 .joinerId(joiner.getId())
@@ -469,7 +469,7 @@ public class ManageService {
                 .phoneNum(joiner.getPhoneNum())
                 .studentID(joiner.getStudentId())
                 .track(joiner.getTrack().getTrackName())
-                .submissionTime(joiner.getCreatedAt().format(formatter))
+                .submissionTime(joiner.getCreatedAt())
                 .build();
     }
 

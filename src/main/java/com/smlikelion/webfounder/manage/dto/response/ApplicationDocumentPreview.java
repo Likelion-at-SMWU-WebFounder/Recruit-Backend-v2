@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
+import java.time.LocalDateTime;
+
 @AllArgsConstructor
 @Builder
 @Getter
@@ -13,5 +15,5 @@ public class ApplicationDocumentPreview {
     private String phoneNum;
     private String studentID;
     private String track;
-    private String submissionTime;
+    private LocalDateTime submissionTime;
 }
