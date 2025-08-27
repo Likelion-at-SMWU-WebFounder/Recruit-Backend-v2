@@ -3,11 +3,13 @@ package com.smlikelion.webfounder.manage.controller;
 import com.smlikelion.webfounder.Recruit.Repository.JoinerRepository;
 import com.smlikelion.webfounder.global.dto.response.BaseResponse;
 import com.smlikelion.webfounder.global.dto.response.ErrorCode;
+import com.smlikelion.webfounder.manage.dto.request.DeleteDocsRequest;
 import com.smlikelion.webfounder.manage.dto.request.DocsInterPassRequestDto;
 import com.smlikelion.webfounder.manage.dto.request.DocsQuestRequest;
 import com.smlikelion.webfounder.manage.dto.request.DocsQuestUpdateRequest;
 import com.smlikelion.webfounder.manage.dto.request.InterviewTimeRequest;
 import com.smlikelion.webfounder.manage.dto.response.ApplicationStatusResponse;
+import com.smlikelion.webfounder.manage.dto.response.DeleteDocsResponse;
 import com.smlikelion.webfounder.manage.dto.response.DocsPassResponseDto;
 import com.smlikelion.webfounder.manage.dto.response.DocsQuestResponse;
 import com.smlikelion.webfounder.manage.dto.response.InterviewPassResponseDto;
@@ -174,4 +176,17 @@ public class ManageController {
     public BaseResponse<String> deleteAllDocs(@Auth AuthInfo authInfo) {
         return new BaseResponse<>(sqlExecutionService.deleteAllDocs(authInfo));
     }
+
+    @Operation(summary = "지원서류 선택 삭제하기")
+    @PostMapping("/apply/docs/delete")
+    @ResponseStatus(HttpStatus.OK)
+    public BaseResponse<DeleteDocsResponse> deleteSelectedDocs(
+            @Auth AuthInfo authInfo,
+            @RequestBody @Valid DeleteDocsRequest request) {
+
+        return new BaseResponse<>(
+                sqlExecutionService.deleteDocsByJoinerIds(authInfo, request.getJoinerIds())
+        );
+    }
+
 }
